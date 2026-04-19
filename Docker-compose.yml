@@ -7,8 +7,10 @@ services:
     depends_on:
       - mysql
     environment:
+      # Use the service name 'mysql' as the host
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
+      # These must match the mysql service below
       MYSQL_DATABASE: railway
       MYSQL_USER: root
       MYSQL_PASSWORD: TWlcdNdeajfiOBmyCBEyPrpqtEbrefpM
