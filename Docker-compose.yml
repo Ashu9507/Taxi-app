@@ -6,20 +6,20 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxibooking
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-    restart: always
+   environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    restart: "no"
 
   mysql:
     image: mysql:8.0
     container_name: taxi_mysql
     ports:
-      - "3307:3306"
+      - "3306:3306"
     environment:
-      MYSQL_DATABASE: taxibooking
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: railway
+      MYSQL_ROOT_PASSWORD: TWlcdNdeajfiOBmyCBEyPrpqtEbrefpM
     volumes:
       - taxi_db:/var/lib/mysql
     restart: always
