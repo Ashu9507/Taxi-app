@@ -8,10 +8,10 @@ services:
       - mysql
     environment:
       # Use the service name 'mysql' as the host
-      MYSQL_HOST: mysql
+      MYSQL_HOST: mysql.railway.internal
       MYSQL_PORT: 3306
       # These must match the mysql service below
-      MYSQL_DATABASE: railway
+      MYSQL_DATABASE: Taxi_app_data
       MYSQL_USER: root
       MYSQL_PASSWORD: TWlcdNdeajfiOBmyCBEyPrpqtEbrefpM
     restart: "no"
@@ -22,7 +22,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: railway
+      MYSQL_DATABASE: Taxi_app_data
       MYSQL_ROOT_PASSWORD: TWlcdNdeajfiOBmyCBEyPrpqtEbrefpM
     volumes:
       - taxi_db:/var/lib/mysql
